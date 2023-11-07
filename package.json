@@ -1,5 +1,5 @@
 {
-  "name": "nestjs-api-boilerplate",
+  "name": "kuama-server",
   "version": "1.0.0",
   "description": "REST API NestJS Quick Start",
   "author": "Blockcoders <engineering@blockcoders.io>",
