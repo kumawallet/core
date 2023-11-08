@@ -2,9 +2,23 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type ActiveSwaps {
+  addressFrom: String!
+  addressTo: String!
+  amountFrom: String!
+  amountTo: String!
+  currencyFrom: String!
+  currencyTo: String!
+  iconFrom: String
+  iconTo: String
+  id: String!
+  status: String!
+}
+
 type CreateSwap {
   destination: String
   error: String
+  id: String
 }
 
 type EstimatedAmount {
@@ -18,6 +32,7 @@ type PairTokensFromNativeCurrency {
 
 type Query {
   createSwap(addressTo: String! = "", amountFrom: String! = "", currencyFrom: String! = "", currencyTo: String! = ""): CreateSwap!
+  getActiveSwaps(swapsIds: [String!]! = []): [ActiveSwaps!]!
   getEstimatedAmount(amount: String! = "", from: String! = "", to: String! = ""): EstimatedAmount!
   getPairTokensFromNativeCurrency(nativeCurrency: String! = ""): PairTokensFromNativeCurrency!
   getTokens: Tokens!

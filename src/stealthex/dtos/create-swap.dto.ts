@@ -21,5 +21,8 @@ export class CreateSwap {
   destination? = ''
 
   @Field(() => String!, { nullable: true })
+  id? = ''
+
+  @Field(() => String!, { nullable: true })
   error? = ''
 }

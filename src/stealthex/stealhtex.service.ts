@@ -116,11 +116,37 @@ export class StealthExService {
       })
 
       const destination = data?.address_from as string
-      return { destination, error: null }
+      return { destination, error: null, id: data?.id as string }
     } catch (error) {
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       //@ts-expect-error
-      return { destination: null, error: error.response?.data?.message }
+      return { destination: null, id: null, error: error.response?.data?.message }
     }
+  }
+
+  async getActiveSwaps(swapIds: string[]) {
+    const swaps = await Promise.all(
+      swapIds.map(async (swapId) => {
+        const { data } = await this.sendPetition({
+          path: `exchange/${swapId}`,
+          method: 'get',
+        })
+        return {
+          id: data?.id,
+          currencyFrom: data?.currency_from,
+          currencyTo: data?.currency_to,
+          iconFrom: data?.currencies?.[data?.currency_from]?.image,
+          iconTo: data?.currencies?.[data?.currency_to]?.image,
+          amountFrom: data?.amount_from,
+          amountTo: data?.amount_to,
+          addressFrom: data?.address_from,
+          addressTo: data?.address_to,
+          status: data?.status,
+          currencies: data?.currencies,
+        }
+      }),
+    )
+
+    return swaps
   }
 }
