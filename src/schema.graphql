@@ -26,15 +26,20 @@ type EstimatedAmount {
   minAmount: String!
 }
 
-type PairTokensFromNativeCurrency {
-  pairTokens: [String!]!
+type GetPairTokens {
+  pairs: [Pairs!]!
+}
+
+type Pairs {
+  asset: String!
+  pairs: [String!]!
 }
 
 type Query {
   createSwap(addressTo: String! = "", amountFrom: String! = "", currencyFrom: String! = "", currencyTo: String! = ""): CreateSwap!
   getActiveSwaps(swapsIds: [String!]! = []): [ActiveSwaps!]!
   getEstimatedAmount(amount: String! = "", from: String! = "", to: String! = ""): EstimatedAmount!
-  getPairTokensFromNativeCurrency(nativeCurrency: String! = ""): PairTokensFromNativeCurrency!
+  getPairTokensFromNativeCurrency(nativeCurrencies: [String!]! = []): GetPairTokens!
   getTokens: Tokens!
   status: String!
   version: String!

@@ -1,7 +1,22 @@
-import { ArgsType, Field } from '@nestjs/graphql'
+import { ArgsType, Field, ObjectType } from '@nestjs/graphql'
 
 @ArgsType()
-export class GetPairTokens {
+export class GetPairTokensArgs {
+  @Field(() => [String])
+  nativeCurrencies: string[] = []
+}
+
+@ObjectType()
+export class Pairs {
   @Field(() => String)
-  nativeCurrency: string = ''
+  asset: string = ''
+
+  @Field(() => [String])
+  pairs: string[] = []
+}
+
+@ObjectType()
+export class GetPairTokens {
+  @Field(() => [Pairs])
+  pairs = []
 }

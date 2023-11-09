@@ -53,11 +53,20 @@ export class StealthExService {
     return data
   }
 
-  async getPairTokensFromNativeCurrency({ nativeCurrency }: { nativeCurrency: string }) {
-    const { data } = await this.sendPetition({
-      path: `pairs/${nativeCurrency}`,
-      method: 'get',
-    })
+  async getPairTokensFromNativeCurrency({ nativeCurrencies }: { nativeCurrencies: string[] }) {
+    const data = await Promise.all(
+      nativeCurrencies.map(async (nativeCurrency) => {
+        const { data } = await this.sendPetition({
+          path: `pairs/${nativeCurrency}`,
+          method: 'get',
+        })
+
+        return {
+          asset: nativeCurrency,
+          pairs: data,
+        }
+      }),
+    )
 
     return data
   }

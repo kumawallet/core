@@ -2,8 +2,8 @@ import { Args, Query, Resolver } from '@nestjs/graphql'
 import { CreateSwapArgs, CreateSwap } from './dtos/create-swap.dto'
 import { ActiveSwaps, ActiveSwapsArgs } from './dtos/get-active-swaps.dto'
 import { EstimatedAmount, GetEstimatedAmount } from './dtos/get-estimated-amount.dto'
-import { GetPairTokens } from './dtos/get-pairs-tokens.dto'
-import { PairTokensFromNativeCurrency, Tokens } from './dtos/get-tokens.dto'
+import { GetPairTokens, GetPairTokensArgs } from './dtos/get-pairs-tokens.dto'
+import { Tokens } from './dtos/get-tokens.dto'
 import { StealthExService } from './stealhtex.service'
 
 @Resolver()
@@ -24,11 +24,11 @@ export class StealhExResolver {
     }
   }
 
-  @Query(() => PairTokensFromNativeCurrency)
-  async getPairTokensFromNativeCurrency(@Args() args: GetPairTokens) {
-    const pairTokens = await this.stealthexService.getPairTokensFromNativeCurrency(args)
+  @Query(() => GetPairTokens)
+  async getPairTokensFromNativeCurrency(@Args() args: GetPairTokensArgs) {
+    const pairs = await this.stealthexService.getPairTokensFromNativeCurrency(args)
     return {
-      pairTokens,
+      pairs,
     }
   }
 
