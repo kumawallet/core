@@ -1,16 +1,17 @@
-FROM node:16.13-alpine
+FROM node:iron-alpine
 
 # Create app directory
 WORKDIR /usr/src/app
 
-RUN npm i -g pnpm
+# node-gyp dependencies
+RUN apk add --update --no-cache python3 make g++ && rm -rf /var/cache/apk/*
 
 # Files required by pnpm install
-COPY .npmrc package.json pnpm-lock.yaml ./
+COPY .npmrc package.json package-lock.json ./
 
-RUN pnpm i --frozen-lockfile
+RUN npm ci
 
 # App source
 COPY . .
 
-CMD [ "pnpm", "start:dev" ]
+CMD [ "npm", "run", "start:dev" ]

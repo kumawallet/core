@@ -6,9 +6,7 @@ import { join } from 'path'
 import { AppResolver } from './app.resolver'
 import { EnvModule } from './env/env.module'
 import { EnvService } from './env/env.service'
-import { StealthExService } from './stealthex/stealhtex.service'
 import { StealthexModule } from './stealthex/stealthex.module'
-import { StealhExResolver } from './stealthex/stealthex.resolver'
 
 @Module({
   imports: [
@@ -19,7 +17,7 @@ import { StealhExResolver } from './stealthex/stealthex.resolver'
       useFactory: async (env: EnvService) => env.getPinoConfig(),
     }),
     GraphQLModule.forRootAsync<ApolloDriverConfig>({
-      imports: [EnvModule, StealthexModule],
+      imports: [EnvModule],
       inject: [EnvService],
       driver: ApolloDriver,
       useFactory: (env: EnvService) => {
@@ -34,6 +32,6 @@ import { StealhExResolver } from './stealthex/stealthex.resolver'
     }),
     StealthexModule,
   ],
-  providers: [AppResolver, StealhExResolver, StealthExService],
+  providers: [AppResolver],
 })
 export class AppModule {}

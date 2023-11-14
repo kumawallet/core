@@ -1,0 +1,175 @@
+{
+  "result": [
+    {
+      "scriptId": "1542",
+      "url": "file:///Users/joseramirez/projects/kumawallet/core/src/app.resolver.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 2801,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "__decorate",
+          "ranges": [
+            {
+              "startOffset": 60,
+              "endOffset": 584,
+              "count": 3
+            },
+            {
+              "startOffset": 143,
+              "endOffset": 151,
+              "count": 1
+            },
+            {
+              "startOffset": 152,
+              "endOffset": 228,
+              "count": 2
+            },
+            {
+              "startOffset": 222,
+              "endOffset": 228,
+              "count": 0
+            },
+            {
+              "startOffset": 364,
+              "endOffset": 515,
+              "count": 0
+            },
+            {
+              "startOffset": 533,
+              "endOffset": 537,
+              "count": 2
+            },
+            {
+              "startOffset": 538,
+              "endOffset": 578,
+              "count": 2
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "__metadata",
+          "ranges": [
+            {
+              "startOffset": 632,
+              "endOffset": 761,
+              "count": 6
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "status",
+          "ranges": [
+            {
+              "startOffset": 944,
+              "endOffset": 986,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "version",
+          "ranges": [
+            {
+              "startOffset": 991,
+              "endOffset": 1033,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 1110,
+              "endOffset": 1122,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 1332,
+              "endOffset": 1344,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    }
+  ],
+  "timestamp": 1008927.277626,
+  "source-map-cache": {
+    "file:///Users/joseramirez/projects/kumawallet/core/src/app.resolver.ts": {
+      "lineLengths": [
+        13,
+        88,
+        129,
+        131,
+        150,
+        66,
+        2,
+        63,
+        109,
+        2,
+        62,
+        29,
+        45,
+        37,
+        14,
+        25,
+        5,
+        15,
+        24,
+        5,
+        2,
+        34,
+        12,
+        39,
+        40,
+        40,
+        43,
+        42,
+        12,
+        39,
+        40,
+        40,
+        43,
+        43,
+        48,
+        29,
+        16,
+        1188
+      ],
+      "data": {
+        "version": 3,
+        "file": "/Users/joseramirez/projects/kumawallet/core/src/app.resolver.ts",
+        "sources": [
+          "file:///Users/joseramirez/projects/kumawallet/core/src/app.resolver.ts"
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;AAAA,6CAAiD;AAG1C,IAAM,WAAW,GAAjB,MAAM,WAAW;IAEtB,MAAM;QACJ,OAAO,SAAS,CAAA;IAClB,CAAC;IAGD,OAAO;QACL,OAAO,QAAQ,CAAA;IACjB,CAAC;CACF,CAAA;AAVY,kCAAW;AAEtB;IADC,IAAA,eAAK,EAA4B,GAAG,EAAE,CAAC,MAAM,CAAC;;;;yCAG9C;AAGD;IADC,IAAA,eAAK,EAA4B,GAAG,EAAE,CAAC,MAAM,CAAC;;;;0CAG9C;sBATU,WAAW;IADvB,IAAA,kBAAQ,GAAE;GACE,WAAW,CAUvB",
+        "sourcesContent": [
+          "import { Query, Resolver } from '@nestjs/graphql'\n\n@Resolver()\nexport class AppResolver {\n  @Query(/* istanbul ignore next */ () => String)\n  status(): string {\n    return 'running'\n  }\n\n  @Query(/* istanbul ignore next */ () => String)\n  version(): string {\n    return 'v1.0.0'\n  }\n}\n"
+        ],
+        "sourceRoot": ""
+      }
+    }
+  }
+}

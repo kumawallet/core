@@ -1,0 +1,403 @@
+{
+  "result": [
+    {
+      "scriptId": "1645",
+      "url": "file:///Users/joseramirez/projects/kumawallet/core/src/env/env.service.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 9156,
+              "count": 1
+            },
+            {
+              "startOffset": 2989,
+              "endOffset": 2997,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "__decorate",
+          "ranges": [
+            {
+              "startOffset": 60,
+              "endOffset": 584,
+              "count": 1
+            },
+            {
+              "startOffset": 152,
+              "endOffset": 228,
+              "count": 0
+            },
+            {
+              "startOffset": 364,
+              "endOffset": 515,
+              "count": 0
+            },
+            {
+              "startOffset": 533,
+              "endOffset": 537,
+              "count": 0
+            },
+            {
+              "startOffset": 538,
+              "endOffset": 578,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "__metadata",
+          "ranges": [
+            {
+              "startOffset": 632,
+              "endOffset": 761,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "EnvService",
+          "ranges": [
+            {
+              "startOffset": 1050,
+              "endOffset": 1960,
+              "count": 11
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "isProduction",
+          "ranges": [
+            {
+              "startOffset": 1965,
+              "endOffset": 2061,
+              "count": 2
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "isDevelopment",
+          "ranges": [
+            {
+              "startOffset": 2066,
+              "endOffset": 2164,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "isTest",
+          "ranges": [
+            {
+              "startOffset": 2169,
+              "endOffset": 2253,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "isStaging",
+          "ranges": [
+            {
+              "startOffset": 2258,
+              "endOffset": 2348,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "getPinoConfig",
+          "ranges": [
+            {
+              "startOffset": 2353,
+              "endOffset": 2730,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1646",
+      "url": "file:///Users/joseramirez/projects/kumawallet/core/src/env/env.validation.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 0,
+              "endOffset": 5810,
+              "count": 1
+            },
+            {
+              "startOffset": 2366,
+              "endOffset": 2381,
+              "count": 0
+            },
+            {
+              "startOffset": 2398,
+              "endOffset": 2402,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "__decorate",
+          "ranges": [
+            {
+              "startOffset": 60,
+              "endOffset": 584,
+              "count": 5
+            },
+            {
+              "startOffset": 143,
+              "endOffset": 151,
+              "count": 0
+            },
+            {
+              "startOffset": 168,
+              "endOffset": 221,
+              "count": 0
+            },
+            {
+              "startOffset": 364,
+              "endOffset": 515,
+              "count": 0
+            },
+            {
+              "startOffset": 538,
+              "endOffset": 578,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "__metadata",
+          "ranges": [
+            {
+              "startOffset": 632,
+              "endOffset": 761,
+              "count": 5
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            {
+              "startOffset": 1076,
+              "endOffset": 1270,
+              "count": 1
+            }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "EnvironmentVariables",
+          "ranges": [
+            {
+              "startOffset": 1363,
+              "endOffset": 1585,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "validate",
+          "ranges": [
+            {
+              "startOffset": 2470,
+              "endOffset": 2872,
+              "count": 0
+            }
+          ],
+          "isBlockCoverage": false
+        }
+      ]
+    }
+  ],
+  "timestamp": 1008927.448251,
+  "source-map-cache": {
+    "file:///Users/joseramirez/projects/kumawallet/core/src/env/env.service.ts": {
+      "lineLengths": [
+        13,
+        88,
+        129,
+        131,
+        150,
+        66,
+        2,
+        63,
+        109,
+        2,
+        7,
+        62,
+        28,
+        43,
+        43,
+        58,
+        35,
+        25,
+        29,
+        94,
+        66,
+        73,
+        78,
+        63,
+        69,
+        79,
+        81,
+        85,
+        78,
+        76,
+        5,
+        20,
+        73,
+        5,
+        21,
+        74,
+        5,
+        14,
+        67,
+        5,
+        17,
+        70,
+        5,
+        21,
+        26,
+        32,
+        34,
+        10,
+        35,
+        34,
+        38,
+        83,
+        14,
+        9,
+        28,
+        5,
+        2,
+        32,
+        46,
+        31,
+        153,
+        15,
+        6140
+      ],
+      "data": {
+        "version": 3,
+        "file": "/Users/joseramirez/projects/kumawallet/core/src/env/env.service.ts",
+        "sources": [
+          "file:///Users/joseramirez/projects/kumawallet/core/src/env/env.service.ts"
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;AAAA,2CAA2C;AAC3C,2CAA8C;AAG9C,0DAAmD;AAG5C,IAAM,UAAU,GAAhB,MAAM,UAAU;IAerB,YAA6B,MAAqB;QAArB,WAAM,GAAN,MAAM,CAAe;QAEhD,IAAI,CAAC,QAAQ,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAc,UAAU,EAAE,4BAAW,CAAC,WAAW,CAAC,CAAA;QACjF,IAAI,CAAC,IAAI,GAAG,QAAQ,CAAC,IAAI,CAAC,MAAM,CAAC,GAAG,CAAS,MAAM,EAAE,MAAM,CAAC,EAAE,EAAE,CAAC,CAAA;QACjE,IAAI,CAAC,aAAa,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAS,eAAe,EAAE,SAAS,CAAC,CAAA;QACxE,IAAI,CAAC,QAAQ,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAS,UAAU,EAAE,wBAAwB,CAAC,CAAA;QAC7E,IAAI,CAAC,SAAS,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAY,WAAW,EAAE,OAAO,CAAC,CAAA;QAGjE,IAAI,CAAC,aAAa,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAU,eAAe,EAAE,KAAK,CAAC,CAAA;QACrE,IAAI,CAAC,kBAAkB,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAU,oBAAoB,EAAE,KAAK,CAAC,CAAA;QAC/E,IAAI,CAAC,mBAAmB,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAU,qBAAqB,EAAE,KAAK,CAAC,CAAA;QACjF,IAAI,CAAC,qBAAqB,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAU,uBAAuB,EAAE,KAAK,CAAC,CAAA;QAErF,IAAI,CAAC,mBAAmB,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAS,qBAAqB,EAAE,EAAE,CAAC,CAAA;QAC7E,IAAI,CAAC,kBAAkB,GAAG,IAAI,CAAC,MAAM,CAAC,GAAG,CAAS,oBAAoB,EAAE,EAAE,CAAC,CAAA;IAC7E,CAAC;IAEM,YAAY;QACjB,OAAO,IAAI,CAAC,QAAQ,KAAK,4BAAW,CAAC,UAAU,CAAA;IACjD,CAAC;IAEM,aAAa;QAClB,OAAO,IAAI,CAAC,QAAQ,KAAK,4BAAW,CAAC,WAAW,CAAA;IAClD,CAAC;IAEM,MAAM;QACX,OAAO,IAAI,CAAC,QAAQ,KAAK,4BAAW,CAAC,IAAI,CAAA;IAC3C,CAAC;IAEM,SAAS;QACd,OAAO,IAAI,CAAC,QAAQ,KAAK,4BAAW,CAAC,OAAO,CAAA;IAC9C,CAAC;IAEM,aAAa;QAClB,MAAM,QAAQ,GAAkB;YAC9B,IAAI,EAAE,IAAI,CAAC,QAAQ;YACnB,KAAK,EAAE,IAAI,CAAC,SAAS;SACtB,CAAA;QAED,IAAI,CAAC,IAAI,CAAC,YAAY,EAAE,EAAE;YACxB,QAAQ,CAAC,SAAS,GAAG;gBACnB,MAAM,EAAE,aAAa;gBACrB,OAAO,EAAE,EAAE,QAAQ,EAAE,IAAI,EAAE,UAAU,EAAE,IAAI,EAAE,aAAa,EAAE,IAAI,EAAE;aACnE,CAAA;SACF;QAED,OAAO,EAAE,QAAQ,EAAE,CAAA;IACrB,CAAC;CACF,CAAA;AAhEY,gCAAU;qBAAV,UAAU;IADtB,IAAA,mBAAU,GAAE;yDAgB0B,sBAAa,oBAAb,sBAAa;GAfvC,UAAU,CAgEtB",
+        "sourcesContent": [
+          "import { Injectable } from '@nestjs/common'\nimport { ConfigService } from '@nestjs/config'\nimport { Params as PinoParams } from 'nestjs-pino'\nimport { Level as PinoLevel, LoggerOptions } from 'pino'\nimport { Environment } from '../env/env.validation'\n\n@Injectable()\nexport class EnvService {\n  public readonly NODE_ENV: Environment\n  public readonly PORT: number\n  public readonly API_BASE_PATH: string\n  public readonly LOG_NAME: string\n  public readonly LOG_LEVEL: PinoLevel\n\n  public readonly GRAPHQL_DEBUG: boolean\n  public readonly GRAPHQL_PLAYGROUND: boolean\n  public readonly GRAPHQL_SORT_SCHEMA: boolean\n  public readonly GRAPHQL_INTROSPECTION: boolean\n\n  public readonly STEALTH_EX_BASE_URL: string\n  public readonly STEALTH_EX_API_KEY: string\n\n  constructor(private readonly config: ConfigService) {\n    // public env variables\n    this.NODE_ENV = this.config.get<Environment>('NODE_ENV', Environment.Development)\n    this.PORT = parseInt(this.config.get<string>('PORT', '8080'), 10)\n    this.API_BASE_PATH = this.config.get<string>('API_BASE_PATH', '/api/v1')\n    this.LOG_NAME = this.config.get<string>('LOG_NAME', 'nestjs-api-boilerplate')\n    this.LOG_LEVEL = this.config.get<PinoLevel>('LOG_LEVEL', 'debug')\n\n    // graphql env variables\n    this.GRAPHQL_DEBUG = this.config.get<boolean>('GRAPHQL_DEBUG', false)\n    this.GRAPHQL_PLAYGROUND = this.config.get<boolean>('GRAPHQL_PLAYGROUND', false)\n    this.GRAPHQL_SORT_SCHEMA = this.config.get<boolean>('GRAPHQL_SORT_SCHEMA', false)\n    this.GRAPHQL_INTROSPECTION = this.config.get<boolean>('GRAPHQL_INTROSPECTION', false)\n\n    this.STEALTH_EX_BASE_URL = this.config.get<string>('STEALTH_EX_BASE_URL', '')\n    this.STEALTH_EX_API_KEY = this.config.get<string>('STEALTH_EX_API_KEY', '')\n  }\n\n  public isProduction(): boolean {\n    return this.NODE_ENV === Environment.Production\n  }\n\n  public isDevelopment(): boolean {\n    return this.NODE_ENV === Environment.Development\n  }\n\n  public isTest(): boolean {\n    return this.NODE_ENV === Environment.Test\n  }\n\n  public isStaging(): boolean {\n    return this.NODE_ENV === Environment.Staging\n  }\n\n  public getPinoConfig(): PinoParams {\n    const pinoHttp: LoggerOptions = {\n      name: this.LOG_NAME,\n      level: this.LOG_LEVEL,\n    }\n\n    if (!this.isProduction()) {\n      pinoHttp.transport = {\n        target: 'pino-pretty',\n        options: { colorize: true, singleLine: true, translateTime: true },\n      }\n    }\n\n    return { pinoHttp }\n  }\n}\n"
+        ],
+        "sourceRoot": ""
+      }
+    },
+    "file:///Users/joseramirez/projects/kumawallet/core/src/env/env.validation.ts": {
+      "lineLengths": [
+        13,
+        88,
+        129,
+        131,
+        150,
+        66,
+        2,
+        63,
+        109,
+        2,
+        7,
+        62,
+        79,
+        57,
+        53,
+        31,
+        16,
+        25,
+        47,
+        45,
+        39,
+        33,
+        60,
+        28,
+        19,
+        48,
+        27,
+        39,
+        49,
+        33,
+        5,
+        1,
+        52,
+        12,
+        47,
+        37,
+        55,
+        12,
+        38,
+        37,
+        51,
+        12,
+        38,
+        37,
+        60,
+        12,
+        38,
+        37,
+        55,
+        12,
+        38,
+        125,
+        56,
+        27,
+        97,
+        39,
+        7,
+        73,
+        37,
+        7,
+        28,
+        43,
+        5,
+        27,
+        1,
+        28,
+        2908
+      ],
+      "data": {
+        "version": 3,
+        "file": "/Users/joseramirez/projects/kumawallet/core/src/env/env.validation.ts",
+        "sources": [
+          "file:///Users/joseramirez/projects/kumawallet/core/src/env/env.validation.ts"
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;AAAA,yDAAgD;AAChD,qDAAgE;AAChE,+BAAyC;AAEzC,IAAY,WAKX;AALD,WAAY,WAAW;IACrB,0CAA2B,CAAA;IAC3B,wCAAyB,CAAA;IACzB,kCAAmB,CAAA;IACnB,4BAAa,CAAA;AACf,CAAC,EALW,WAAW,2BAAX,WAAW,QAKtB;AAED,MAAa,oBAAoB;IAAjC;QAEE,aAAQ,GAAgB,WAAW,CAAC,WAAW,CAAA;QAG/C,SAAI,GAAG,MAAM,CAAA;QAGb,kBAAa,GAAG,SAAS,CAAA;QAGzB,aAAQ,GAAG,wBAAwB,CAAA;QAGnC,cAAS,GAAc,OAAO,CAAA;IAChC,CAAC;CAAA;AAfD,oDAeC;AAbC;IADC,IAAA,wBAAM,EAAC,WAAW,CAAC;;sDAC2B;AAG/C;IADC,IAAA,0BAAQ,GAAE;;kDACE;AAGb;IADC,IAAA,0BAAQ,GAAE;;2DACc;AAGzB;IADC,IAAA,0BAAQ,GAAE;;sDACwB;AAGnC;IADC,IAAA,0BAAQ,GAAE;kDACA,YAAS,oBAAT,YAAS;uDAAU;AAGhC,SAAgB,QAAQ,CAAC,MAA+B;IACtD,MAAM,eAAe,GAAG,IAAA,gCAAY,EAAC,oBAAoB,EAAE,MAAM,EAAE;QACjE,wBAAwB,EAAE,IAAI;KAC/B,CAAC,CAAA;IACF,MAAM,MAAM,GAAG,IAAA,8BAAY,EAAC,eAAe,EAAE;QAC3C,qBAAqB,EAAE,KAAK;KAC7B,CAAC,CAAA;IAEF,IAAI,MAAM,CAAC,MAAM,GAAG,CAAC,EAAE;QACrB,MAAM,IAAI,KAAK,CAAC,MAAM,CAAC,QAAQ,EAAE,CAAC,CAAA;KACnC;IACD,OAAO,eAAe,CAAA;AACxB,CAAC;AAZD,4BAYC",
+        "sourcesContent": [
+          "import { plainToClass } from 'class-transformer'\nimport { IsEnum, IsString, validateSync } from 'class-validator'\nimport { Level as PinoLevel } from 'pino'\n\nexport enum Environment {\n  Development = 'development',\n  Production = 'production',\n  Staging = 'staging',\n  Test = 'test',\n}\n\nexport class EnvironmentVariables {\n  @IsEnum(Environment)\n  NODE_ENV: Environment = Environment.Development\n\n  @IsString()\n  PORT = '3000'\n\n  @IsString()\n  API_BASE_PATH = '/api/v1'\n\n  @IsString()\n  LOG_NAME = 'nestjs-api-boilerplate'\n\n  @IsString()\n  LOG_LEVEL: PinoLevel = 'debug'\n}\n\nexport function validate(config: Record<string, unknown>) {\n  const validatedConfig = plainToClass(EnvironmentVariables, config, {\n    enableImplicitConversion: true,\n  })\n  const errors = validateSync(validatedConfig, {\n    skipMissingProperties: false,\n  })\n\n  if (errors.length > 0) {\n    throw new Error(errors.toString())\n  }\n  return validatedConfig\n}\n"
+        ],
+        "sourceRoot": ""
+      }
+    }
+  }
+}

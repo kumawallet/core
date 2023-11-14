@@ -14,9 +14,9 @@ export class GetEstimatedAmount {
 
 @ObjectType()
 export class EstimatedAmount {
-  @Field(() => String!, { nullable: true })
-  estimatedAmount?: string = ''
+  @Field(() => Number!, { nullable: true })
+  estimated?: number = 0
 
-  @Field(() => String)
-  minAmount: string = ''
+  @Field(() => Number)
+  min: number = 0
 }

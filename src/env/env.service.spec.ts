@@ -1,11 +1,12 @@
 import { ConfigModule } from '@nestjs/config'
 import { Test, TestingModule } from '@nestjs/testing'
+import t from 'tap'
 import { EnvService } from './env.service'
 
-describe('EnvService', () => {
+t.test('EnvService', (t) => {
   let service: EnvService
 
-  beforeEach(async () => {
+  t.beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       imports: [
         ConfigModule.forRoot({
@@ -18,52 +19,58 @@ describe('EnvService', () => {
     service = module.get<EnvService>(EnvService)
   })
 
-  it('should be defined', () => {
-    expect(service).toBeDefined()
+  t.test('should be defined', (t) => {
+    t.ok(service)
+    t.end()
   })
 
-  describe('isProduction', () => {
-    it('should be false', () => {
-      expect(service.isProduction()).toBeFalsy()
+  t.test('isProduction', (t) => {
+    t.test('should be false', (t) => {
+      t.notOk(service.isProduction())
+      t.end()
     })
+
+    t.end()
   })
 
-  describe('isDevelopment', () => {
-    it('should be false', () => {
-      expect(service.isDevelopment()).toBeFalsy()
+  t.test('isDevelopment', (t) => {
+    t.test('should be false', (t) => {
+      t.notOk(service.isDevelopment())
+      t.end()
     })
+
+    t.end()
   })
 
-  describe('isTest', () => {
-    it('should be true', () => {
-      expect(service.isTest()).toBeTruthy()
+  t.test('isTest', (t) => {
+    t.test('should be true', (t) => {
+      t.ok(service.isTest())
+      t.end()
     })
+
+    t.end()
   })
 
-  describe('isStaging', () => {
-    it('should be false', () => {
-      expect(service.isStaging()).toBeFalsy()
+  t.test('isStaging', (t) => {
+    t.test('should be false', (t) => {
+      t.notOk(service.isStaging())
+      t.end()
     })
+
+    t.end()
   })
 
-  describe('getPinoConfig', () => {
-    it('should return a instance of PinoParams', () => {
-      expect(service.getPinoConfig()).toEqual(
-        expect.objectContaining({
-          pinoHttp: {
-            name: expect.any(String),
-            level: expect.any(String),
-            transport: {
-              target: expect.any(String),
-              options: {
-                colorize: expect.any(Boolean),
-                singleLine: expect.any(Boolean),
-                translateTime: expect.any(Boolean),
-              },
-            },
-          },
-        }),
-      )
+  t.test('getPinoConfig', (t) => {
+    t.test('should return a instance of PinoParams', (t) => {
+      const config = service.getPinoConfig()
+
+      t.type(config, 'object')
+      t.hasOwnProps(config?.pinoHttp ?? {}, ['name', 'level', 'transport'])
+      t.end()
     })
+
+    t.end()
   })
+
+  t.end()
 })

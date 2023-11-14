@@ -8,7 +8,10 @@ import { AppModule } from './app.module'
 import { EnvService } from './env/env.service'
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
+  const app = await NestFactory.create<NestFastifyApplication>(
+    AppModule,
+    new FastifyAdapter({ disableRequestLogging: true }),
+  )
   const env = app.get(EnvService)
 
   app.enableCors()

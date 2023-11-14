@@ -1,4 +1,4 @@
-FROM node:16.13-alpine AS builder
+FROM node:iron-alpine AS builder
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -6,24 +6,22 @@ WORKDIR /usr/src/app
 # node-gyp dependencies
 RUN apk add --update --no-cache python3 make g++ && rm -rf /var/cache/apk/*
 
-RUN npm i -g pnpm
-
 # Files required by pnpm install
-COPY .npmrc package.json pnpm-lock.yaml ./
+COPY .npmrc package.json package-lock.json ./
 
 # Install dependencies from pnpm-lock.yaml
-RUN pnpm i --frozen-lockfile
+RUN npm ci
 
 COPY . .
 
-RUN pnpm build
+RUN npm run build
 
 # Remove the packages specified in devDependencie
-RUN pnpm prune --prod --no-optional
+RUN npm prune --production
 
 # By using the FROM statement again, we are telling Docker that it should create a new,
 # fresh image without any connection to the previous one.
-FROM node:16.13-alpine AS build
+FROM node:iron-alpine AS build
 
 # Create app directory
 WORKDIR /usr/src/app

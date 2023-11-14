@@ -3,6 +3,9 @@ import { ArgsType, Field, ObjectType } from '@nestjs/graphql'
 @ArgsType()
 export class CreateSwapArgs {
   @Field(() => String)
+  addressFrom: string = ''
+
+  @Field(() => String)
   addressTo: string = ''
 
   @Field(() => String)

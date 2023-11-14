@@ -12,21 +12,22 @@ export class StealhExResolver {
 
   @Query(() => Tokens)
   async getTokens() {
-    const tokens = (await this.stealthexService.getTokens()) as {
-      name: string
-      symbol: string
-      image: string
-      network: string
-    }[]
+    const tokens = await this.stealthexService.getTokens()
 
     return {
-      tokens,
+      tokens: tokens.map((token) => ({
+        name: token.name,
+        symbol: token.symbol,
+        image: token.image,
+        network: token.network,
+      })),
     }
   }
 
   @Query(() => GetPairTokens)
   async getPairTokensFromNativeCurrency(@Args() args: GetPairTokensArgs) {
-    const pairs = await this.stealthexService.getPairTokensFromNativeCurrency(args)
+    const pairs = await this.stealthexService.getPairTokensFromNativeCurrency(args.nativeCurrencies)
+
     return {
       pairs,
     }
@@ -34,17 +35,26 @@ export class StealhExResolver {
 
   @Query(() => EstimatedAmount)
   async getEstimatedAmount(@Args() args: GetEstimatedAmount) {
-    const { estimatedAmount, minAmount } = await this.stealthexService.getEstimatedAmount(args)
+    const { from, to, amount } = args
+    const { estimated, min } = await this.stealthexService.getExchangeAmounts(from, to, amount)
 
     return {
-      estimatedAmount,
-      minAmount,
+      estimated,
+      min,
     }
   }
 
   @Query(() => CreateSwap)
   async createSwap(@Args() args: CreateSwapArgs) {
-    const { destination, error, id } = await this.stealthexService.createSwap(args)
+    const { addressFrom, addressTo, amountFrom, currencyFrom, currencyTo } = args
+    const { destination, error, id } = await this.stealthexService.createSwap(
+      addressFrom,
+      addressTo,
+      amountFrom,
+      currencyFrom,
+      currencyTo,
+    )
+
     return {
       destination,
       error,

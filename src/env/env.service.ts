@@ -17,6 +17,7 @@ export class EnvService {
   public readonly GRAPHQL_SORT_SCHEMA: boolean
   public readonly GRAPHQL_INTROSPECTION: boolean
 
+  public readonly STEALTH_EX_BASE_URL: string
   public readonly STEALTH_EX_API_KEY: string
 
   constructor(private readonly config: ConfigService) {
@@ -33,6 +34,7 @@ export class EnvService {
     this.GRAPHQL_SORT_SCHEMA = this.config.get<boolean>('GRAPHQL_SORT_SCHEMA', false)
     this.GRAPHQL_INTROSPECTION = this.config.get<boolean>('GRAPHQL_INTROSPECTION', false)
 
+    this.STEALTH_EX_BASE_URL = this.config.get<string>('STEALTH_EX_BASE_URL', '')
     this.STEALTH_EX_API_KEY = this.config.get<string>('STEALTH_EX_API_KEY', '')
   }
 
