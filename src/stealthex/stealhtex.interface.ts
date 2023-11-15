@@ -32,8 +32,8 @@ export interface StealthExMinimalAmount {
 }
 
 export interface StealthExExchangeAmounts {
-  estimated: number
-  min: number
+  estimated: string
+  min: string
 }
 
 export interface StealthExExchangeCurrency {

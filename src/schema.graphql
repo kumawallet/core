@@ -22,8 +22,8 @@ type CreateSwap {
 }
 
 type EstimatedAmount {
-  estimated: Float
-  min: Float!
+  estimated: String
+  min: String!
 }
 
 type GetPairTokens {

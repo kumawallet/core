@@ -93,13 +93,13 @@ export class StealthExService {
       ])
 
       return {
-        estimated: parseInt(estimate.data?.estimated_amount || '0', 10),
-        min: parseInt(min.data?.min_amount || '0', 10),
+        estimated: estimate.data?.estimated_amount || '0',
+        min: min.data?.min_amount || '0',
       }
     } catch (err) {
       this.logger.error({ err, from, to, amount }, 'Error getting exchange amounts.')
 
-      return { estimated: 0, min: 0 }
+      return { estimated: '0', min: '0' }
     }
   }
 
