@@ -3,20 +3,20 @@ export interface StealthExApiError {
   message: string
 }
 
-export interface StealthExToken {
-  symbol: string
-  has_extra_id: boolean
-  extra_id: string
-  name: string
-  warnings_from: string[]
-  warnings_to: string[]
-  validation_address: string
-  validation_extra: string
-  address_explorer: string
-  tx_explorer: string
-  image: string
-  network: string
-}
+// export interface StealthExToken {
+//   symbol: string
+//   has_extra_id: boolean
+//   extra_id: string
+//   name: string
+//   warnings_from: string[]
+//   warnings_to: string[]
+//   validation_address: string
+//   validation_extra: string
+//   address_explorer: string
+//   tx_explorer: string
+//   image: string
+//   network: string
+// }
 
 export interface StealthExPairTokens {
   asset: string
