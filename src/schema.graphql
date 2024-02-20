@@ -41,6 +41,7 @@ type Query {
   getEstimatedAmount(amount: String! = "", from: String! = "", to: String! = ""): EstimatedAmount!
   getPairTokensFromNativeCurrency(nativeCurrencies: [String!]! = []): GetPairTokens!
   getTokens: Tokens!
+  getTokensToSwap: Tokens!
   status: String!
   version: String!
 }

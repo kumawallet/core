@@ -1,4 +1,5 @@
 import { Args, Query, Resolver } from '@nestjs/graphql'
+import { StealthAssets } from './dtos/array-stealth-assets'
 import { CreateSwapArgs, CreateSwap } from './dtos/create-swap.dto'
 import { ActiveSwaps, ActiveSwapsArgs } from './dtos/get-active-swaps.dto'
 import { EstimatedAmount, GetEstimatedAmount } from './dtos/get-estimated-amount.dto'
@@ -9,6 +10,13 @@ import { StealthExService } from './stealhtex.service'
 @Resolver()
 export class StealhExResolver {
   constructor(private readonly stealthexService: StealthExService) {}
+
+  @Query(() => Tokens)
+  getTokensToSwap() {
+    return {
+      tokens: StealthAssets,
+    }
+  }
 
   @Query(() => Tokens)
   async getTokens() {
