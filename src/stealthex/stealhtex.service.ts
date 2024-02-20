@@ -4,6 +4,7 @@ import { AxiosError, AxiosRequestConfig, AxiosResponse, Method } from 'axios'
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino'
 import { catchError, firstValueFrom } from 'rxjs'
 import {
+  StealthExToken,
   StealthExPairTokens,
   StealthExEstimatedAmount,
   StealthExMinimalAmount,
@@ -51,17 +52,18 @@ export class StealthExService {
       ),
     )
   }
-  // public async getTokens(): Promise<StealthExToken[]> {
-  //   try {
-  //     const { data } = await this.sendPetition<StealthExToken[]>('currency', 'get')
 
-  //     return data
-  //   } catch (err) {
-  //     this.logger.error({ err }, 'Error getting tokens.')
+  public async getTokens(): Promise<StealthExToken[]> {
+    try {
+      const { data } = await this.sendPetition<StealthExToken[]>('currency', 'get')
 
-  //     return []
-  //   }
-  // }
+      return data
+    } catch (err) {
+      this.logger.error({ err }, 'Error getting tokens.')
+
+      return []
+    }
+  }
 
   public async getPairTokensFromNativeCurrency(nativeCurrencies: string[]): Promise<StealthExPairTokens[]> {
     try {
