@@ -60,7 +60,7 @@ export class TokensService {
           usd: price,
         })
       })
-      await this.cacheManager.set('tokens', newPrices)
+      await this.cacheManager.set('tokens', newPrices, 86400)
     } catch (error) {
       this.logger.error(JSON.stringify(error, null, 2), 'Error updating token prices')
     }
