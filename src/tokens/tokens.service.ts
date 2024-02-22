@@ -62,7 +62,6 @@ export class TokensService {
         })
       })
       this.tokens = newPrices
-      console.log(this.tokens)
     } catch (error) {
       this.logger.error(JSON.stringify(error, null, 2), 'Error updating token prices')
     }
