@@ -42,7 +42,8 @@ export class TokensService {
     const tokens = await firstValueFrom(response)
     return tokens
   }
-  @Interval(5000)
+  //It is suggested to use 23529 if switching to the Hobbyist plan
+  @Interval(259200)
   async updateTokenPrices() {
     try {
       const tokenPrices = await this.fetchTokensPrices(TokensSymbols)
@@ -61,6 +62,7 @@ export class TokensService {
         })
       })
       this.tokens = newPrices
+      console.log(this.tokens)
     } catch (error) {
       this.logger.error(JSON.stringify(error, null, 2), 'Error updating token prices')
     }
