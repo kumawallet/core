@@ -20,6 +20,7 @@ export class EnvService {
   public readonly STEALTH_EX_BASE_URL: string
   public readonly STEALTH_EX_API_KEY: string
 
+  public readonly COINMARKETCAP_BASE_URL: string
   public readonly COINMARKETCAP_API_KEY: string
 
   constructor(private readonly config: ConfigService) {
@@ -39,6 +40,7 @@ export class EnvService {
     this.STEALTH_EX_BASE_URL = this.config.get<string>('STEALTH_EX_BASE_URL', '')
     this.STEALTH_EX_API_KEY = this.config.get<string>('STEALTH_EX_API_KEY', '')
 
+    this.COINMARKETCAP_BASE_URL = this.config.get<string>('COINMARKETCAP_BASE_URL', '')
     this.COINMARKETCAP_API_KEY = this.config.get<string>('COINMARKETCAP_API_KEY', '')
   }
 

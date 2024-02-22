@@ -1,32 +1,31 @@
 import { HttpService } from '@nestjs/axios'
-import { Injectable } from '@nestjs/common'
+import { Injectable, Inject } from '@nestjs/common'
 import { Interval } from '@nestjs/schedule'
+import { Cache, CACHE_MANAGER } from '@nestjs/cache-manager'
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino'
 import { catchError, firstValueFrom, map } from 'rxjs'
 import { TokensSymbols } from './dtos/array-tokens-symbol'
 import { Token, CoinMarketTokenPrice, TokenPrice } from './tokens.interface'
-import { EnvService } from '../env/env.service'
 
 @Injectable()
 export class TokensService {
-  private tokens: Token[] = []
   constructor(
     @InjectPinoLogger(TokensService.name)
+    @Inject(CACHE_MANAGER)
     private readonly logger: PinoLogger,
     private readonly httpService: HttpService,
-    private readonly envService: EnvService,
+    private cacheManager: Cache,
   ) {}
 
-  getTokensPrice(symbol: string[]): Token[] {
-    return this.tokens.filter((element) => symbol.includes(element.symbol))
+  async getTokensPrice(symbol: string[]): Promise<Token[]> {
+    const tokens: Token[] | undefined = await this.cacheManager.get('tokens')
+    console.log(tokens)
+    return !tokens ? [] : tokens.filter((element) => symbol.includes(element.symbol))
   }
 
   async fetchTokensPrices(symbols: string[]): Promise<CoinMarketTokenPrice> {
     const response = await this.httpService
-      .get('https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest', {
-        headers: {
-          'X-CMC_PRO_API_KEY': this.envService.COINMARKETCAP_API_KEY,
-        },
+      .get('/cryptocurrency/quotes/latest', {
         params: {
           symbol: symbols.join(','),
         },
@@ -42,8 +41,8 @@ export class TokensService {
     const tokens = await firstValueFrom(response)
     return tokens
   }
-  //It is suggested to use 23529 if switching to the Hobbyist plan
-  @Interval(259200)
+  //It is suggested to use 23529 if switching to the Hobbyist plan259200
+  @Interval(5000)
   async updateTokenPrices() {
     try {
       const tokenPrices = await this.fetchTokensPrices(TokensSymbols)
@@ -61,7 +60,7 @@ export class TokensService {
           usd: price,
         })
       })
-      this.tokens = newPrices
+      await this.cacheManager.set('tokens', newPrices)
     } catch (error) {
       this.logger.error(JSON.stringify(error, null, 2), 'Error updating token prices')
     }
