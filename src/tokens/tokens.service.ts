@@ -1,7 +1,7 @@
 import { HttpService } from '@nestjs/axios'
+import { Cache, CACHE_MANAGER } from '@nestjs/cache-manager'
 import { Injectable, Inject } from '@nestjs/common'
 import { Interval } from '@nestjs/schedule'
-import { Cache, CACHE_MANAGER } from '@nestjs/cache-manager'
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino'
 import { catchError, firstValueFrom, map } from 'rxjs'
 import { TokensSymbols } from './dtos/array-tokens-symbol'
