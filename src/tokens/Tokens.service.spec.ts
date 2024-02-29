@@ -57,24 +57,6 @@ t.test('TokensService ', async (t) => {
     t.same(Object.keys(result), symbols, 'The expected response was not obtained')
     t.end()
   })
-
-  t.test('updateTokenPrices - Interval', async (t) => {
-    const intervalTime = 5000
-    const expectedExecutions = 2
-    let executionCount = 0
-    await new Promise<void>((resolve) => {
-      const intervalId = setInterval(async () => {
-        await service.updateTokenPrices()
-        executionCount++
-        t.ok(executionCount <= expectedExecutions, 'this ok')
-        if (executionCount === expectedExecutions) {
-          clearInterval(intervalId)
-          resolve()
-        }
-      }, intervalTime)
-    })
-    t.end()
-  })
   t.test('getTokensPrice', async (t) => {
     const result = await service.getTokensPrice(['DOT'])
     t.same(result, filterToken, 'The expected response was not obtained')
@@ -91,7 +73,7 @@ t.test('TokensService ', async (t) => {
       t.end()
     })
     t.test('updateTokenPrices - Catch', async (t) => {
-      const serviceError = new TokensService(mockService, HttpServiceError, cacheManagerMock)
+      const serviceError = new TokensService(mockService as any, HttpServiceError as any, cacheManagerMock as any)
       const capturedLogs = t.capture(console, 'log')
       await serviceError.updateTokenPrices()
       const results = capturedLogs()

@@ -40,6 +40,7 @@ type Query {
   getActiveSwaps(swapsIds: [String!]! = []): [ActiveSwaps!]!
   getEstimatedAmount(amount: String! = "", from: String! = "", to: String! = ""): EstimatedAmount!
   getPairTokensFromNativeCurrency(nativeCurrencies: [String!]! = []): GetPairTokens!
+  getTokenPrice(tokens: [String!]! = []): TokensPrice!
   getTokens: Tokens!
   getTokensToSwap: Tokens!
   status: String!
@@ -53,6 +54,16 @@ type Token {
   symbol: String!
 }
 
+type TokenInfo {
+  name: String!
+  symbol: String!
+  usd: Float!
+}
+
 type Tokens {
   tokens: [Token!]!
+}
+
+type TokensPrice {
+  tokens: [TokenInfo!]!
 }

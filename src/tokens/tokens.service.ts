@@ -5,8 +5,8 @@ import { Interval } from '@nestjs/schedule'
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino'
 import { catchError, firstValueFrom, map } from 'rxjs'
 import { TokensSymbols } from './dtos/array-tokens-symbol'
-import { Token, TokenPrice } from './tokens.interface'
-
+import { Token, CoinMarketTokenPrice, TokenPrice } from './tokens.interface'
+const UPDATE_PRICES_FRECUENCY_MS = Number(process.env.UPDATE_PRICES_FRECUENCY_MS)
 @Injectable()
 export class TokensService {
   constructor(
@@ -16,13 +16,12 @@ export class TokensService {
     private readonly httpService: HttpService,
     private cacheManager: Cache,
   ) {}
-
   async getTokensPrice(symbol: string[]): Promise<Token[]> {
     const tokens: Token[] | undefined = await this.cacheManager.get('tokens')
     return !tokens ? [] : tokens.filter((element) => symbol.includes(element.symbol))
   }
 
-  async fetchTokensPrices(symbols: string[]) {
+  async fetchTokensPrices(symbols: string[]): Promise<CoinMarketTokenPrice> {
     const response = await this.httpService
       .get('/cryptocurrency/quotes/latest', {
         params: {
@@ -40,8 +39,7 @@ export class TokensService {
     const tokens = await firstValueFrom(response)
     return tokens
   }
-  //It is suggested to use 23529 if switching to the Hobbyist plan259200
-  @Interval(5000)
+  @Interval(UPDATE_PRICES_FRECUENCY_MS)
   async updateTokenPrices() {
     try {
       const tokenPrices = await this.fetchTokensPrices(TokensSymbols)
