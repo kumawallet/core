@@ -1,12 +1,14 @@
 import { ApolloDriver, ApolloDriverConfig } from '@nestjs/apollo'
 import { Module } from '@nestjs/common'
 import { GraphQLModule } from '@nestjs/graphql'
+import { ScheduleModule } from '@nestjs/schedule'
 import { LoggerModule } from 'nestjs-pino'
 import { join } from 'path'
 import { AppResolver } from './app.resolver'
 import { EnvModule } from './env/env.module'
 import { EnvService } from './env/env.service'
 import { StealthexModule } from './stealthex/stealthex.module'
+import { TokensModule } from './tokens/tokens.module'
 
 @Module({
   imports: [
@@ -30,7 +32,9 @@ import { StealthexModule } from './stealthex/stealthex.module'
         }
       },
     }),
+    ScheduleModule.forRoot(),
     StealthexModule,
+    TokensModule,
   ],
   providers: [AppResolver],
 })
