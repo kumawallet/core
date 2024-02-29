@@ -45,7 +45,6 @@ export class StealhExResolver {
   async getEstimatedAmount(@Args() args: GetEstimatedAmount) {
     const { from, to, amount } = args
     const { estimated, min } = await this.stealthexService.getExchangeAmounts(from, to, amount)
-
     return {
       estimated,
       min,
@@ -62,7 +61,6 @@ export class StealhExResolver {
       currencyFrom,
       currencyTo,
     )
-
     return {
       destination,
       error,
