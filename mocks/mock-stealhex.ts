@@ -1,4 +1,4 @@
-import { AxiosResponse,AxiosError } from 'axios'
+
 
 export const currency = {
     data:[
@@ -115,10 +115,7 @@ export const currency = {
 }
 
 export const NativeCurrency = {
-    data : [
-    {
-      "asset": "BNB",
-      "pairs": [
+    data :  [
         "usdcalgo",
         "scrt",
         "chzerc20",
@@ -141,51 +138,6 @@ export const NativeCurrency = {
         "enjmainnet",
         "beamxbsc",
       ],
-      "asset": "DOT",
-      "pairs": [
-        "pika",
-            "arb",
-            "usdcalgo",
-            "voltv3erc20",
-            "voltv3",
-            "xmr",
-            "usdterc20",
-            "bnb",
-            "atom",
-            "theta",
-            "matic",
-            "ftm",
-            "amb",
-            "dock",
-            "band",
-            "luna",
-            "win",
-            "scrt",
-            "chzerc20",
-            "mavzk",
-            "bifierc20",
-            "mavbase",
-            "prombsc",
-            "ntrn",
-            "rdnterc20",
-            "compbsc",
-            "chzmainnet",
-            "aeurerc20",
-            "alicebsc",
-            "aeurbsc",
-            "ace",
-            "usdcnear",
-            "vic",
-            "fdusdopbnb",
-            "beamxerc20",
-            "enjmainnet",
-            "beamxbsc",
-            "duskbsc",
-            "jto",
-            "memeerc20",
-            "1000sats",
-            "tia",]
-    }],
     status: 200,
     statusText: 'OK',
     headers: {},
@@ -261,7 +213,7 @@ export const mockSwap = {
     addressFrom: '1DpwmiCkmpwXzk4ofFk5Qg9AjqsPiEMbxH',
     addressTo: '0x6B6005c8e59bfEcF565c7B5f6097b12AA6e35806',
     status: 'waiting'
-} ,
+}
 
 
 export const responseSwap = { destination: '1DpwmiCkmpwXzk4ofFk5Qg9AjqsPiEMbxH', id: '145dfnd' }

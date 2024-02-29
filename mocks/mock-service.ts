@@ -1,5 +1,4 @@
-import { of, throwError } from 'rxjs'
-
+import { of } from 'rxjs'
 
 
 
@@ -42,18 +41,18 @@ export const HttpServiceError = {
   request: () => new Error('HttpService request error')
 }
 
-export const responseMock: AxiosResponse<any> = {
-  data: { },
+export const responseMock = {
+  data: {},
   status: 200,
   statusText: 'OK',
-  headers: {},
+  headers: {}, 
   config: {},
-}
+};
 
-export const responseError: AxiosError<any> = {
-  "status": 404,
-  "statusText": "Not Found",
-  "headers": {},
-  "config": {},
-  "request": {}
+export const responseError = {
+  status: 404,
+  statusText: 'Not Found',
+  headers: {}, // Agrega una propiedad headers aquí
+  config: {},
+  request: {},
 }
