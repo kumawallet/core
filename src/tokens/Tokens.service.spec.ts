@@ -57,7 +57,11 @@ t.test('TokensService ', async (t) => {
     t.same(Object.keys(result), symbols, 'The expected response was not obtained')
     t.end()
   })
-
+  t.test('getTokensPrice - invalid token', async (t) => {
+    const result = await service.getTokensPrice()
+    t.same(result, [], 'The expected response was not obtained')
+    t.end()
+  })
   t.test('updateTokenPrices - Cache-Manager', async (t) => {
     t.beforeEach(async () => {
       cacheManagerMock.setData = []
@@ -72,6 +76,11 @@ t.test('TokensService ', async (t) => {
   t.test('getTokensPrice', async (t) => {
     const result = await service.getTokensPrice(['DOT'])
     t.same(result, filterToken, 'The expected response was not obtained')
+    t.end()
+  })
+  t.test('getTokensPrice - invalid token', async (t) => {
+    const result = await service.getTokensPrice(['BNB'])
+    t.same(result, [], 'The expected response was not obtained')
     t.end()
   })
 
