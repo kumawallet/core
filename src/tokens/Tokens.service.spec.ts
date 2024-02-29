@@ -57,11 +57,7 @@ t.test('TokensService ', async (t) => {
     t.same(Object.keys(result), symbols, 'The expected response was not obtained')
     t.end()
   })
-  t.test('getTokensPrice', async (t) => {
-    const result = await service.getTokensPrice(['DOT'])
-    t.same(result, filterToken, 'The expected response was not obtained')
-    t.end()
-  })
+
   t.test('updateTokenPrices - Cache-Manager', async (t) => {
     t.beforeEach(async () => {
       cacheManagerMock.setData = []
@@ -72,13 +68,19 @@ t.test('TokensService ', async (t) => {
       t.same(cacheManagerMock.setData[0], tokensSave, 'The expected response was not obtained')
       t.end()
     })
-    t.test('updateTokenPrices - Catch', async (t) => {
-      const serviceError = new TokensService(mockService as any, HttpServiceError as any, cacheManagerMock as any)
-      const capturedLogs = t.capture(console, 'log')
-      await serviceError.updateTokenPrices()
-      const results = capturedLogs()
-      t.ok(results.length > 0, 'Se han registrado mensajes en la consola')
-      t.end()
-    })
+  })
+  t.test('getTokensPrice', async (t) => {
+    const result = await service.getTokensPrice(['DOT'])
+    t.same(result, filterToken, 'The expected response was not obtained')
+    t.end()
+  })
+
+  t.test('updateTokenPrices - Catch', async (t) => {
+    const serviceError = new TokensService(mockService as any, HttpServiceError as any, cacheManagerMock as any)
+    const capturedLogs = t.capture(console, 'log')
+    await serviceError.updateTokenPrices()
+    const results = capturedLogs()
+    t.ok(results.length > 0, 'Se han registrado mensajes en la consola')
+    t.end()
   })
 })
