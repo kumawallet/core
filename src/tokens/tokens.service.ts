@@ -18,7 +18,6 @@ export class TokensService {
   ) {}
   async getTokensPrice(symbol: string[]): Promise<Token[]> {
     const tokens: Token[] | undefined = await this.cacheManager.get('tokens')
-    console.log(tokens)
     return !tokens ? [] : tokens.filter((element) => symbol.includes(element.symbol))
   }
 
