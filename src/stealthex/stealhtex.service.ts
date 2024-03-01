@@ -75,7 +75,6 @@ export class StealthExService {
           })),
         ),
       )
-
       return data
     } catch (err) {
       this.logger.error({ err, nativeCurrencies }, 'Error getting pair for tokens.')
@@ -91,7 +90,6 @@ export class StealthExService {
         this.sendPetition<StealthExEstimatedAmount>(`estimate/${from}/${to}`, 'get', params),
         this.sendPetition<StealthExMinimalAmount>(`min/${from}/${to}`, 'get', params),
       ])
-
       return {
         estimated: estimate.data?.estimated_amount || '0',
         min: min.data?.min_amount || '0',
@@ -127,7 +125,6 @@ export class StealthExService {
       return { destination: data.address_from, id: data.id }
     } catch (err: any) {
       this.logger.error({ err, addressTo, amountFrom, currencyFrom, currencyTo }, 'Error creating swap.')
-
       return { error: err.message }
     }
   }
@@ -150,7 +147,6 @@ export class StealthExService {
           })),
         ),
       )
-
       return data
     } catch (err) {
       this.logger.error({ err, swapIds }, 'Error getting active swaps.')

@@ -1,3 +1,4 @@
+/* c8 ignore start */
 import { ObjectType, Field, ArgsType } from '@nestjs/graphql'
 
 @ObjectType()
